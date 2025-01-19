@@ -1,0 +1,29 @@
+import axios from "axios"
+const request = axios.create({
+    // baseURL:'http://test.zstars.com.cn',
+    timeout:5000,
+})
+
+//3,定义前置拦截器，请求拦截器，请求发出之前触发的
+request.interceptors.request.use((config)=>{
+    config.headers.tenant = 'zzgzjg';
+    // config.headers["zstars-auth"] = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyT2xkSWQiOiJCNEFCMkMyMTBERjU0NEU4Qjg3RDI4OEFCNUIzMTk1OSIsImRlcHROYW1lIjoi6aKG5a-85bGCIiwib3JnTmFtZSI6IumDkeW3nuW4guS6uuawkeaUv-W6nOWbveaciei1hOS6p-ebkeedo-euoeeQhuWnlOWRmOS8miIsImxvZ2lubmFtZSI6InRlc3QwMSIsIm9yZ09sZElkIjoiNDhFRTI5MjBFOTc2NDdFREIzRjREQTk5OTAyODlBMEUiLCJvcmdpZCI6MTA5MDY2MDg0NDQyNzAyMjMzNywic2xhZnQiOiJhYmNqMzFrMmsxbDNsMTIzaXU0aTk0MTIzbyIsInBhc3N3b3JkIjoienpnempnY2IyZWU5M2NmMTk5Yjc5ODBhMjRiY2MwYmMxYTZkZWEiLCJkZXB0T2xkSWQiOiJCQjIzMUU5M0Y4MjI0RkY4QkU2RTJFMkNDN0FGNkQzMyIsIm9wZXJ1c2VybmFtZSI6Iua1i-ivleS6uuWRmDAxIiwib3JnQ29kZSI6IjAwMSIsInJvbGVDb2RlIjpbIndsZCJdLCJpc2luaXRwd2QiOiIxIiwiaWQiOjEwOTA3NDkwNzc4MTkyMzIyNTYsImRlcGFydG1lbnQiOjExMDA3MjE1MjM1Mjc3ODI0MDEsImV4cCI6MTY4Mzc4ODEwMCwiZGVwdENvZGUiOiIwMDAwMCJ9.mE2aNpjrXE2xSWiIuTsbs3ugl7HWphzCKYvSB9svcA0'
+    config.headers["zstars-auth"] = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyT2xkSWQiOiJCNEFCMkMyMTBERjU0NEU4Qjg3RDI4OEFCNUIzMTk1OSIsImRlcHROYW1lIjoi6aKG5a-85bGCIiwib3JnTmFtZSI6IumDkeW3nuW4guS6uuawkeaUv-W6nOWbveaciei1hOS6p-ebkeedo-euoeeQhuWnlOWRmOS8miIsImxvZ2lubmFtZSI6InRlc3QwMSIsIm9yZ09sZElkIjoiNDhFRTI5MjBFOTc2NDdFREIzRjREQTk5OTAyODlBMEUiLCJvcmdpZCI6MTA5MDY2MDg0NDQyNzAyMjMzNywic2xhZnQiOiJhYmNqMzFrMmsxbDNsMTIzaXU0aTk0MTIzbyIsInBhc3N3b3JkIjoienpnempnY2IyZWU5M2NmMTk5Yjc5ODBhMjRiY2MwYmMxYTZkZWEiLCJkZXB0T2xkSWQiOiJCQjIzMUU5M0Y4MjI0RkY4QkU2RTJFMkNDN0FGNkQzMyIsIm9wZXJ1c2VybmFtZSI6Iua1i-ivleS6uuWRmDAxIiwib3JnQ29kZSI6IjAwMSIsInJvbGVDb2RlIjpbIndsZCJdLCJpc2luaXRwd2QiOiIxIiwiaWQiOjEwOTA3NDkwNzc4MTkyMzIyNTYsImRlcGFydG1lbnQiOjExMDA3MjE1MjM1Mjc3ODI0MDEsImV4cCI6MTY4Mzc4ODEwMCwiZGVwdENvZGUiOiIwMDAwMCJ9.mE2aNpjrXE2xSWiIuTsbs3ugl7HWphzCKYvSB9svcA0'
+
+    return config;
+},(error)=>{
+    // 报错的是定义前置拦截器时候抛出一个错误信息
+    return Promise.reject(error);
+})
+//4.定义响应拦截
+request.interceptors.response.use((response)=>{
+    // 响应回来的数据操作
+    return response;
+
+},(error)=>{
+    return Promise.reject(error);
+});
+// 抛出对象的信息
+export default request;
+
+
