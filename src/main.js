@@ -25,12 +25,7 @@ require("echarts/lib/component/legend");
 
 Vue.prototype.$echarts = echarts;
 
-//全局定义axios
-// axios.defaults.headers.common['tenant'] = `yjkj`;
-// axios.defaults.headers.common['yjkj-auth'] = sessionStorage.getItem("yjkj-auth") || localStorage.getItem("yjkj-auth") || '';
-// const host = window.location.protocol+"//"+ window.location.host;
-axios.defaults.baseURL = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8090/platform';
-Vue.prototype.$http = axios
+Vue.prototype.$http = http
 
 Vue.config.productionTip = false
 

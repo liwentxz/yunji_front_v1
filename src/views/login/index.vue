@@ -25,7 +25,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
     name: 'login',
     components: {},
@@ -63,9 +62,6 @@ export default {
             this.$http.post("/api/login", param).then(res => {
                 this.$router.push("/portal")
             })
-            // axios.post("http://localhost:8090/platform/api/login",param).then(res => { 
-            // location = ""
-            // })
         }
     }
 }

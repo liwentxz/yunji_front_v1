@@ -1,13 +1,15 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import login from '../views/login/index.vue'
+import Vue from "vue";
+import Router from "vue-router";
+import login from "../views/login/index.vue";
 
-Vue.use(VueRouter)
+// import frontRouter from "./modules/front/index";
 
-const routes = [
+Vue.use(Router);
+
+export const constantRouterMap = [
   {
     path: "/",
-    redirect: "/login"
+    redirect: "/login",
   },
   {
     path: "/login",
@@ -15,15 +17,34 @@ const routes = [
     component: login,
   },
   {
-    path: '/portal',
-    name: 'portal',
-    component: () => import('@/views/front/portal/index.vue')
-  }
-]
+    path: "/portal",
+    name: "portal",
+    component: () => import("@/views/front/portal/index.vue"),
+  },
+  {
+    path: "/portal",
+    name: "portal",
+    component: () => import("@/views/front/portal/index.vue"),
+  },
+  {
+    path: "/yzsbHome",
+    name: "yzsbHome",
+    component: () => import("@/views/front/homePage/yzsb_home.vue"),
+  },
+  // frontRouter,
+];
 
-const router = new VueRouter({
-  base: process.env.BASE_URL,
-  routes
-})
+export const createRouter = (routes) =>
+  new Router({
+    scrollBehavior: () => ({ y: 0 }),
+    routes,
+  });
 
-export default router
+const router = createRouter(constantRouterMap);
+
+export function resetRouter() {
+  const newRouter = createRouter(constantRouterMap);
+  router.matcher = newRouter.matcher; // the relevant part
+}
+
+export default router;
