@@ -82,7 +82,7 @@ export default {
   },
 };
 </script>
-<style lang="less" scoped>
+<style scoped>
 .menuContainer :deep(.el-menu-item) {
   font-size: 14px;
 }
