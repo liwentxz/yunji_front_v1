@@ -26,11 +26,6 @@ export const constantRouterMap = [
     name: "portal",
     component: () => import("@/views/front/portal/index.vue"),
   },
-  {
-    path: "/yzsbHome",
-    name: "yzsbHome",
-    component: () => import("@/views/front/homePage/yzsb_home.vue"),
-  },
   // frontRouter,
 ];
 

@@ -56,7 +56,6 @@
 
 <script>
 import menuItem from "@/components/yunji_menu_tree/index.vue";
-import Component1 from "@/components/product/index.vue";
 export default {
   name: "",
   components: { menuItem },
