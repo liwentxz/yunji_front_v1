@@ -2,11 +2,11 @@ import Vue from "vue";
 import Router from "vue-router";
 import login from "../views/login/index.vue";
 
-// import frontRouter from "./modules/front/index";
+import Layout from "@/layout";
 
 Vue.use(Router);
 
-export const constantRouterMap = [
+export const constantRoutes = [
   {
     path: "/",
     redirect: "/login",
@@ -17,29 +17,41 @@ export const constantRouterMap = [
     component: login,
   },
   {
-    path: "/portal",
-    name: "portal",
-    component: () => import("@/views/front/portal/index.vue"),
+    path: "/layout",
+    name: "layout",
+    component: Layout,
   },
   {
-    path: "/portal",
-    name: "portal",
-    component: () => import("@/views/front/portal/index.vue"),
+    path: "/layout",
+    name: "layout",
+    component: Layout,
+    children: [
+      {
+        path: "/materials/steel",
+        name: "steel",
+        component: () => import("@/views/front/materials/steel/index.vue"),
+        // meta: {
+        //   requireAuth: true,
+        // },
+      },
+    ],
   },
-  // frontRouter,
 ];
 
-export const createRouter = (routes) =>
-  new Router({
-    scrollBehavior: () => ({ y: 0 }),
-    routes,
-  });
+// 防止连续点击多次路由报错
+let routerPush = Router.prototype.push;
+let routerReplace = Router.prototype.replace;
+// push
+Router.prototype.push = function push(location) {
+  return routerPush.call(this, location).catch((err) => err);
+};
+// replace
+Router.prototype.replace = function push(location) {
+  return routerReplace.call(this, location).catch((err) => err);
+};
 
-const router = createRouter(constantRouterMap);
-
-export function resetRouter() {
-  const newRouter = createRouter(constantRouterMap);
-  router.matcher = newRouter.matcher; // the relevant part
-}
-
-export default router;
+export default new Router({
+  mode: "history", // 去掉url中的#
+  scrollBehavior: () => ({ y: 0 }),
+  routes: constantRoutes,
+});
