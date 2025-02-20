@@ -11,6 +11,8 @@ import store from "./store";
 import { Splitpanes, Pane } from "splitpanes";
 import "splitpanes/dist/splitpanes.css";
 
+import "./routeGuard";
+
 Vue.use(ElementUI);
 Vue.component("splitpanes", Splitpanes);
 Vue.component("pane", Pane);

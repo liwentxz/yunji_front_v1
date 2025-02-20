@@ -1,15 +1,15 @@
 <template>
   <div>
-    <template v-if="!menuItem.children">
+    <template v-if="menuItem.children.length == 0">
       <el-menu-item :index="menuItem.path">
         <i :class="menuItem.icon"></i>
-        <span slot="title">{{ menuItem.title }}</span>
+        <span slot="title">{{ menuItem.menuName }}</span>
       </el-menu-item>
     </template>
     <el-submenu v-else :index="menuItem.path" popper-append-to-body>
       <template slot="title">
         <i :class="menuItem.icon"></i>
-        {{ menuItem.title }}
+        {{ menuItem.menuName }}
       </template>
       <menu-item
         v-for="(child, index) in menuItem.children"

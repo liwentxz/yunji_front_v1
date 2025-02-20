@@ -1,17 +1,19 @@
-import Vue from 'vue'
-import vuex from 'vuex'
+import Vue from "vue";
+import Vuex from "vuex";
+import menus from "./modules/menus";
+import tags from "./modules/tags";
+import tabs from "./modules/tabs";
+import getters from "./getters";
 
-Vue.use(vuex);
-import tab from './modules/tab';
+Vue.use(Vuex);
 
-const store = new vuex.Store({
-  state: {},
-  getters: {},
-  mutations: {},
-  actions: {},
+const store = new Vuex.Store({
   modules: {
-    tab: tab
+    menus,
+    tags,
+    tabs,
   },
-})
+  getters,
+});
 
-export default store
+export default store;

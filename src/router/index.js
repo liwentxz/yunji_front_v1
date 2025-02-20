@@ -13,26 +13,34 @@ export const constantRoutes = [
   },
   {
     path: "/login",
-    name: "login",
     component: login,
+    hidden: true,
   },
   {
-    path: "/layout",
-    name: "layout",
-    component: Layout,
+    path: "/404",
+    component: () => import("@/views/error/404"),
+    hidden: true,
   },
   {
-    path: "/layout",
-    name: "layout",
+    path: "/401",
+    component: () => import("@/views/error/401"),
+    hidden: true,
+  },
+  {
+    path: "",
     component: Layout,
     children: [
       {
-        path: "/materials/steel",
-        name: "steel",
-        component: () => import("@/views/front/materials/steel/index.vue"),
-        // meta: {
-        //   requireAuth: true,
-        // },
+        path: "index",
+        component: () => import("@/views/portal/index"),
+        name: "Portal",
+        meta: { title: "首页", icon: "portal", requiresAuth: true },
+      },
+      {
+        path: "steel",
+        name: "Steel",
+        component: () => import("@/views/front/materials/steel/index"),
+        meta: { title: "钢材", icon: "steel" },
       },
     ],
   },

@@ -1,6 +1,6 @@
 <template>
   <div class="layout_top">
-    <div style="width: 10rem">云际科技</div>
+    <div style="width: 10rem"></div>
     <div class="toolBox">
       <div style="width: 20%; height: 100%"></div>
       <div style="width: 80%; height: 100%"></div>
@@ -25,7 +25,7 @@ export default {
   flex-direction: row;
   align-items: center;
   color: #fff;
-  background-color: rgb(12, 173, 243);
+  background-color: #0cadf3;
 
   .toolBox {
     width: 15rem;
@@ -34,7 +34,7 @@ export default {
     flex-direction: row;
     align-items: center;
     margin-left: auto;
-    background-color: bisque;
+    background-color: #95e8fd;
   }
 }
 </style>
