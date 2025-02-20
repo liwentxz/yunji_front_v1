@@ -1,15 +1,15 @@
 <template>
-  <div>
+  <div class="menuItemBox">
     <template v-if="menuItem.children.length == 0">
-      <el-menu-item :index="menuItem.path">
+      <el-menu-item :index="menuItem.path" @click="menuItemSelected(menuItem)">
         <i :class="menuItem.icon"></i>
-        <span slot="title">{{ menuItem.menuName }}</span>
+        <template slot="title">{{ menuItem.menuName }}</template>
       </el-menu-item>
     </template>
     <el-submenu v-else :index="menuItem.path" popper-append-to-body>
       <template slot="title">
         <i :class="menuItem.icon"></i>
-        {{ menuItem.menuName }}
+        <span v-if="!isCollapse"> {{ menuItem.menuName }}</span>
       </template>
       <menu-item
         v-for="(child, index) in menuItem.children"
@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import { mapGetters, mapState } from "vuex";
 export default {
   name: "MenuItem",
   components: {},
@@ -31,8 +32,22 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      mainTabsActiveName: "",
+    };
   },
-  methods: {},
+  computed: {
+    ...mapGetters(["sidebar"]),
+    isCollapse() {
+      return !this.sidebar.opened;
+    },
+  },
+  methods: {
+    menuItemSelected(menu) {
+      this.$store.dispatch("tags/addTagList", menu);
+      this.mainTabsActiveName = menu.menuName;
+    },
+  },
 };
 </script>
+<style lang="scss" scoped></style>

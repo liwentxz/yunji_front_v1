@@ -6,6 +6,7 @@
         <Sidebar />
       </pane>
       <pane :size="100 - menuPaneSize" min-size="60">
+        <Tagsbar />
         <app-main />
       </pane>
     </splitpanes>
@@ -13,7 +14,8 @@
 </template>
 
 <script>
-import { AppMain, Sidebar, Headerbar } from "./components";
+import { AppMain, Sidebar, Headerbar, Tagsbar } from "./components";
+import { mapGetters, mapState } from "vuex";
 
 export default {
   name: "Layout",
@@ -21,11 +23,18 @@ export default {
     Sidebar,
     AppMain,
     Headerbar,
+    Tagsbar,
   },
   data() {
     return {
-      menuPaneSize: 15,
+      // menuPaneSize: 15,
     };
+  },
+  computed: {
+    ...mapGetters(["sidebar"]),
+    menuPaneSize() {
+      return this.sidebar.size;
+    },
   },
 };
 </script>

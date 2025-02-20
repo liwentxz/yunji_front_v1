@@ -69,7 +69,8 @@ export default {
         pwd: this.loginForm.password,
       };
       // this.$http.post("/api/login", param).then((res) => {
-      localStorage.setItem("token", "liwen");
+      sessionStorage.setItem("token", "liwen");
+      sessionStorage.setItem("sidebarStatus", 1);
       this.$router.push("/index");
       // });
     },
