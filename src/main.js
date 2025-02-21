@@ -4,6 +4,8 @@ import App from "./App.vue";
 import router from "./router";
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
+
+import "@/assets/styles/index.scss"; // ruoyi css
 import axios from "axios";
 import http from "@/utils/http/index.js";
 import RelationGraph from "relation-graph";
@@ -24,6 +26,17 @@ require("echarts/lib/chart/line");
 require("echarts/lib/component/tooltip");
 require("echarts/lib/component/title");
 require("echarts/lib/component/legend");
+
+// const setGlobalFontSize = (fontSize) => {
+//   const style = document.createElement("style");
+//   style.textContent = `
+//     * {
+//       font-size: ${fontSize}px !important;
+//     }
+//   `;
+//   document.head.appendChild(style);
+// };
+// Vue.prototype.$setFontSize = setGlobalFontSize;
 
 Vue.prototype.$echarts = echarts;
 

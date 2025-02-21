@@ -39,22 +39,10 @@ export default {
 <style lang="scss" scoped>
 .yunji_layout {
   width: 100vw;
-  background-color: rgb(245, 245, 245);
+  background-color: #f5f5f5;
 }
-
-.el-menu {
-  .el-sub-menu {
-    .el-sub-menu__title {
-      font-size: 16px;
-    }
-  }
-
-  .el-menu-item {
-    font-size: 16px;
-  }
-
-  .el-icon {
-    font-size: 16px;
-  }
+.yunji_layout :deep(.splitpanes__splitter) {
+  min-width: 2px;
+  background: linear-gradient(to right, #ebebeb, #f7f7f7);
 }
 </style>

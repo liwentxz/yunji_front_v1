@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="sidebarContainer">
     <div class="searchBox">
       <i class="searchIconBox el-icon-search" v-if="isCollapse"></i>
       <el-input
@@ -61,6 +61,11 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.sidebarContainer {
+  width: 100%;
+  height: calc(100vh - 51px);
+  background-color: #ffffff;
+}
 .searchBox {
   display: flex;
   flex-direction: row;

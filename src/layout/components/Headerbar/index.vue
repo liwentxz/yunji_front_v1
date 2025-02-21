@@ -1,9 +1,23 @@
 <template>
   <div class="layout_top">
-    <div style="width: 10rem"></div>
     <div class="toolBox">
-      <div style="width: 20%; height: 100%"></div>
-      <div style="width: 80%; height: 100%"></div>
+      <el-dropdown @command="handleCommand">
+        <span class="el-dropdown-link">
+          <div class="userInfoBox">
+            <el-image
+              class="userAvatarBox"
+              style="width: 40px; height: 40px"
+              :src="url"
+            ></el-image>
+            <div class="userNameBox">李稳</div>
+          </div>
+        </span>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item command="personage">个人中心</el-dropdown-item>
+          <el-dropdown-item command="account">账号设置</el-dropdown-item>
+          <el-dropdown-item command="logout">退出登录</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
     </div>
   </div>
 </template>
@@ -13,7 +27,16 @@ export default {
   name: "Headerbar",
   components: {},
   data() {
-    return {};
+    return {
+      url: "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
+    };
+  },
+  methods: {
+    handleCommand(command) {
+      if (command == "personage") {
+        // this.$setFontSize(14);
+      }
+    },
   },
 };
 </script>
@@ -24,17 +47,36 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  color: #fff;
-  background-color: #0cadf3;
+  background-color: #ffffff;
+  border-bottom: 1px solid #cfcfcf;
 
   .toolBox {
-    width: 15rem;
     height: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-left: auto;
-    background-color: #95e8fd;
+
+    .userInfoBox {
+      min-width: 100px;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .userAvatarBox {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .userNameBox {
+      margin: 0 10px;
+      color: #000;
+      font-size: 14px;
+    }
   }
 }
 </style>

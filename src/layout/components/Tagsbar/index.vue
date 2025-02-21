@@ -9,7 +9,6 @@
       class="tagBox"
       v-for="tag in tagList"
       :key="tag.path"
-      size="small"
       :closable="tag.name != '首页'"
       :color="isActive(tag) ? '#ecf5ff' : ''"
       effect="plain"

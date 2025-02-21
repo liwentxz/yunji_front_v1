@@ -46,10 +46,6 @@ const mutations = {
       if (idx <= index || (item.meta && item.meta.affix)) {
         return true;
       }
-      const i = state.cachedViews.indexOf(item.name);
-      if (i > -1) {
-        state.cachedViews.splice(i, 1);
-      }
       return false;
     });
   },
@@ -61,10 +57,6 @@ const mutations = {
     state.tagList = state.tagList.filter((item, idx) => {
       if (idx >= index || (item.meta && item.meta.affix)) {
         return true;
-      }
-      const i = state.cachedViews.indexOf(item.name);
-      if (i > -1) {
-        state.cachedViews.splice(i, 1);
       }
       return false;
     });
