@@ -4,7 +4,7 @@ const state = {
 
 const mutations = {
   ADD_TAG_LIST: (state, item) => {
-    if (state.tagList.some((v) => v.menuId === item.menuId)) return;
+    if (state.tagList.some((v) => v.path === item.path)) return;
     state.tagList.push(
       Object.assign({}, item, {
         name: item.menuName,
@@ -22,19 +22,13 @@ const mutations = {
 
   DEL_OTHERS_TAG_LIST: (state, item) => {
     state.tagList = state.tagList.filter((v) => {
-      return v.meta.affix || v.path === item.path;
+      return v.path === item.path;
     });
-    state.iframeViews = state.iframeViews.filter(
-      (item) => item.path === item.path
-    );
   },
-
   DEL_ALL_TAG_LIST: (state) => {
     const affixTags = state.tagList.filter((tag) => tag.meta.affix);
     state.tagList = affixTags;
-    state.iframeViews = [];
   },
-
   UPDATE_TAG_LIST: (state, item) => {
     for (let v of state.tagList) {
       if (v.path === item.path) {
@@ -43,7 +37,6 @@ const mutations = {
       }
     }
   },
-
   DEL_RIGHT_TAG_LIST: (state, item) => {
     const index = state.tagList.findIndex((v) => v.path === item.path);
     if (index === -1) {
@@ -57,14 +50,9 @@ const mutations = {
       if (i > -1) {
         state.cachedViews.splice(i, 1);
       }
-      if (item.meta.link) {
-        const fi = state.iframeViews.findIndex((v) => v.path === item.path);
-        state.iframeViews.splice(fi, 1);
-      }
       return false;
     });
   },
-
   DEL_LEFT_TAG_LIST: (state, item) => {
     const index = state.tagList.findIndex((v) => v.path === item.path);
     if (index === -1) {
@@ -77,10 +65,6 @@ const mutations = {
       const i = state.cachedViews.indexOf(item.name);
       if (i > -1) {
         state.cachedViews.splice(i, 1);
-      }
-      if (item.meta.link) {
-        const fi = state.iframeViews.findIndex((v) => v.path === item.path);
-        state.iframeViews.splice(fi, 1);
       }
       return false;
     });

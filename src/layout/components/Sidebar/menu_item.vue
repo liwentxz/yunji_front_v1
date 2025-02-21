@@ -12,7 +12,7 @@
         <span v-if="!isCollapse"> {{ menuItem.menuName }}</span>
       </template>
       <menu-item
-        v-for="(child, index) in menuItem.children"
+        v-for="child in menuItem.children"
         :key="child.path"
         :menu-item="child"
       />
@@ -42,10 +42,16 @@ export default {
       return !this.sidebar.opened;
     },
   },
+  mounted() {
+    if (this.menuItem.menuName == "首页") {
+      this.$store.dispatch("tags/addTagList", this.menuItem);
+    }
+  },
   methods: {
     menuItemSelected(menu) {
       this.$store.dispatch("tags/addTagList", menu);
       this.mainTabsActiveName = menu.menuName;
+      this.$router.push(menu.path);
     },
   },
 };

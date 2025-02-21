@@ -1,28 +1,27 @@
 <template>
   <div>
-    <div style="margin-top: -6px">
-      <i
-        v-if="isCollapse"
-        style="
-          font-size: 16px;
-          width: 100%;
-          height: 40px;
-          line-height: 40px;
-          text-align: center;
-        "
-        class="el-icon-search"
-      ></i>
+    <div class="searchBox">
+      <i class="searchIconBox el-icon-search" v-if="isCollapse"></i>
       <el-input
-        v-else
+        v-if="!isCollapse"
         placeholder="请输入内容"
+        size="small"
         v-model="input3"
-        class="input-with-select"
       >
-        <el-button slot="append" icon="el-icon-search"></el-button>
       </el-input>
+      <el-button
+        v-if="!isCollapse"
+        size="small"
+        icon="el-icon-search"
+      ></el-button>
     </div>
 
-    <el-menu class="menuContainer" :collapse="isCollapse" router>
+    <el-menu
+      :default-active="activeMenu"
+      class="menuContainer"
+      :collapse="isCollapse"
+      :unique-opened="true"
+    >
       <menu-item v-for="menu in menuList" :key="menu.path" :menu-item="menu" />
     </el-menu>
   </div>
@@ -51,8 +50,30 @@ export default {
     isCollapse() {
       return !this.sidebar.opened;
     },
+    activeMenu() {
+      const route = this.$route;
+      const { path } = route;
+      return path;
+    },
   },
   methods: {},
   mounted() {},
 };
 </script>
+<style lang="scss" scoped>
+.searchBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+}
+.searchIconBox {
+  font-size: 16px;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+</style>

@@ -4,11 +4,15 @@
       <i v-if="isCollapse" class="el-icon-s-unfold"></i>
       <i v-else class="el-icon-s-fold"></i>
     </div>
+
     <el-tag
       class="tagBox"
-      :key="tag.menuId"
       v-for="tag in tagList"
-      closable
+      :key="tag.path"
+      size="small"
+      :closable="tag.name != '首页'"
+      :color="isActive(tag) ? '#ecf5ff' : ''"
+      effect="plain"
       :disable-transitions="false"
       @close="handleTagClose(tag)"
       @click="selectedTabHandle(tag)"
@@ -35,13 +39,27 @@ export default {
     },
   },
   methods: {
+    isActive(item) {
+      return item.path === this.$route.path;
+    },
     collapseSidebar() {
       this.$store.dispatch("app/toggleSideBar");
     },
-    handleTagClose(tag) {
-      this.$store.dispatch("tags/delTagList", tag);
+    handleTagClose(item) {
+      this.$store.dispatch("tags/delTagList", item);
+      if (this.isActive(item)) {
+        this.toLastView(this.tagList, item);
+      }
     },
-    selectedTabHandle(tag) {},
+    toLastView(tagList, item) {
+      const latestTag = tagList.slice(-1)[0];
+      if (latestTag) {
+        this.$router.push(latestTag.path);
+      }
+    },
+    selectedTabHandle(item) {
+      this.$router.push(item.path);
+    },
   },
 };
 </script>
@@ -64,6 +82,7 @@ export default {
   }
 
   .tagBox {
+    margin-left: 8px;
     cursor: pointer;
   }
 }

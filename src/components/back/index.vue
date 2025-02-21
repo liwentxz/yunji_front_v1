@@ -61,7 +61,7 @@ export default {
   components: { menuItem },
   data() {
     return {
-      menuPaneSize: 15,
+      menuPaneSize: 12,
       menuList: [],
       isCollapse: false,
       curActiveIndex: "",

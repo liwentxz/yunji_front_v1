@@ -26,9 +26,7 @@ export default {
     Tagsbar,
   },
   data() {
-    return {
-      // menuPaneSize: 15,
-    };
+    return {};
   },
   computed: {
     ...mapGetters(["sidebar"]),

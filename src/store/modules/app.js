@@ -2,7 +2,7 @@ const state = {
   sidebar: {
     opened: sessionStorage.getItem("sidebarStatus") == 0 ? false : true,
     withoutAnimation: false,
-    size: 15,
+    size: 12,
   },
 };
 
@@ -11,7 +11,7 @@ const mutations = {
     state.sidebar.opened = !state.sidebar.opened;
     state.sidebar.withoutAnimation = false;
     if (state.sidebar.opened) {
-      state.sidebar.size = 15;
+      state.sidebar.size = 12;
       sessionStorage.setItem("sidebarStatus", 1);
     } else {
       state.sidebar.size = 3.5;
