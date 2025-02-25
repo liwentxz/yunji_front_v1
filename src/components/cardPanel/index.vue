@@ -1,17 +1,13 @@
 <template>
-  <el-card class="box-card">
-    <div slot="header" class="clearfix">
-      <span>卡片名称</span>
-      <el-button style="float: right; padding: 3px 0" type="text"
-        >操作按钮</el-button
-      >
-    </div>
-    <!-- <slot name="header">默认头部</slot>
-    <div class="card-content">
-      <slot>默认内容</slot>
-    </div>
-    <slot name="footer">默认底部</slot> -->
-  </el-card>
+  <div class="cardBox">
+    <el-card>
+      <slot name="header"></slot>
+      <div class="cardContent">
+        <slot></slot>
+      </div>
+      <slot name="footer"></slot>
+    </el-card>
+  </div>
 </template>
 
 <script>
@@ -28,25 +24,14 @@ export default {
 };
 </script>
 
-<style>
-.text {
-  font-size: 14px;
+<style lang="scss" scoped>
+.cardBox {
+  margin: 10px;
 }
-
-.item {
-  margin-bottom: 18px;
+.cardContent {
+  padding: 5px;
 }
-
-.clearfix:before,
-.clearfix:after {
-  display: table;
-  content: "";
-}
-.clearfix:after {
-  clear: both;
-}
-
-.box-card {
-  width: 480px;
+.cardBox :deep(.el-card__body) {
+  padding: 0;
 }
 </style>

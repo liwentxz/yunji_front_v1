@@ -24,8 +24,6 @@ export default {
 .mainContainer {
   width: calc(100% - 6px);
   height: calc(100vh - 97px);
-  background-color: #fcfcfc;
-  border-radius: 10px;
   margin: 3px;
   overflow: auto;
 }

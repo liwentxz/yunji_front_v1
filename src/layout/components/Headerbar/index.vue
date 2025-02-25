@@ -1,5 +1,8 @@
 <template>
   <div class="layout_top">
+    <div class="lesseeTitleBox">
+      <div class="titleText">云际科技</div>
+    </div>
     <div class="toolBox">
       <el-dropdown @command="handleCommand">
         <span class="el-dropdown-link">
@@ -13,8 +16,7 @@
           </div>
         </span>
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item command="personage">个人中心</el-dropdown-item>
-          <el-dropdown-item command="account">账号设置</el-dropdown-item>
+          <el-dropdown-item command="person">个人中心</el-dropdown-item>
           <el-dropdown-item command="logout">退出登录</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -33,8 +35,13 @@ export default {
   },
   methods: {
     handleCommand(command) {
-      if (command == "personage") {
-        // this.$setFontSize(14);
+      if (command == "person") {
+        let menuObj = {
+          menuName: "个人中心",
+          path: "/system/user/personalCenter",
+        };
+        this.$store.dispatch("tags/addTagList", menuObj);
+        this.$router.push(menuObj.path);
       }
     },
   },
@@ -49,6 +56,20 @@ export default {
   align-items: center;
   background-color: #ffffff;
   border-bottom: 1px solid #cfcfcf;
+
+  .lesseeTitleBox {
+    max-width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20px;
+    background-color: #eaeaea;
+
+    .titleText {
+      font-size: 26px;
+    }
+  }
 
   .toolBox {
     height: 100%;

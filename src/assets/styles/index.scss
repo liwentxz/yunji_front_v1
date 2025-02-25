@@ -4,7 +4,7 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: rgb(185, 239, 247);
+  background-color: #f8f8f8;
 }
 
 /* 整个滚动条 */
@@ -15,12 +15,12 @@ body,
 
 /* 滚动条轨道 */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #e6e6e6;
 }
 
 /* 滚动条滑块 */
 ::-webkit-scrollbar-thumb {
-  background: #afafaf;
+  background: #888;
   border-radius: 6px;
 }
 

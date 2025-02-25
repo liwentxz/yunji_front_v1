@@ -1,5 +1,5 @@
 <template>
-  <div id="chart" style="width: 200px; height: 200px"></div>
+  <div ref="chart" :style="{ width: chartWidth, height: chartHeight }"></div>
 </template>
 
 <script>
@@ -7,6 +7,14 @@ import * as echarts from "echarts";
 export default {
   name: "FoundationBarChart",
   components: {},
+  props: {
+    chartWidth: {
+      type: String,
+    },
+    chartHeight: {
+      type: String,
+    },
+  },
   data() {
     return {};
   },
@@ -17,7 +25,7 @@ export default {
   },
   methods: {
     initChart() {
-      var chartDom = document.getElementById("chart");
+      var chartDom = this.$refs.chart;
       var myChart = echarts.init(chartDom);
       var option;
 

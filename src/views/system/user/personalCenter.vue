@@ -1,33 +1,13 @@
 <template>
   <div class="portalContainer">
-    <CardPanel style="width: 500px">
+    <CardPanel style="width: 400px">
       <template v-slot:header>
         <div class="headerBox">
           <i class="headerIcon el-icon-collection-tag"></i>
-          <div class="headerText">用户分析</div>
+          <div class="headerText">个人信息</div>
         </div>
       </template>
-      <div>
-        <FoundationBarChart
-          :chartWidth="'100%'"
-          :chartHeight="'300px'"
-        ></FoundationBarChart>
-      </div>
-      <template v-slot:footer> </template>
-    </CardPanel>
-    <CardPanel style="width: 800px">
-      <template v-slot:header>
-        <div class="headerBox">
-          <i class="headerIcon el-icon-collection-tag"></i>
-          <div class="headerText">订单统计</div>
-        </div>
-      </template>
-      <div>
-        <StackLineChart
-          :chartWidth="'100%'"
-          :chartHeight="'300px'"
-        ></StackLineChart>
-      </div>
+      <div></div>
       <template v-slot:footer> </template>
     </CardPanel>
   </div>

@@ -48,6 +48,12 @@ export const constantRoutes = [
         component: () => import("@/views/front/product/furniture/index"),
         meta: { title: "家具" },
       },
+      {
+        path: "system/user/personalCenter",
+        name: "personalCenter",
+        component: () => import("@/views/system/user/personalCenter"),
+        meta: { title: "个人中心" },
+      },
     ],
   },
 ];

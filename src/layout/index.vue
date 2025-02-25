@@ -39,10 +39,10 @@ export default {
 <style lang="scss" scoped>
 .yunji_layout {
   width: 100vw;
-  background-color: #f5f5f5;
+  background-color: #fafafa;
 }
 .yunji_layout :deep(.splitpanes__splitter) {
-  min-width: 2px;
+  width: 2px;
   background: linear-gradient(to right, #ebebeb, #f7f7f7);
 }
 </style>
