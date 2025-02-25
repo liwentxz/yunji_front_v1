@@ -64,12 +64,13 @@ export default {
 </script>
 <style lang="scss" scoped>
 .headerTagBox {
-  width: 100%;
+  width: calc(100% - 6px);
   height: 40px;
   display: flex;
   flex-direction: row;
   align-items: center;
   background-color: #fff;
+  margin: 0 3px;
 
   .collapse-btn {
     height: 30px;

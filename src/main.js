@@ -27,17 +27,6 @@ require("echarts/lib/component/tooltip");
 require("echarts/lib/component/title");
 require("echarts/lib/component/legend");
 
-// const setGlobalFontSize = (fontSize) => {
-//   const style = document.createElement("style");
-//   style.textContent = `
-//     * {
-//       font-size: ${fontSize}px !important;
-//     }
-//   `;
-//   document.head.appendChild(style);
-// };
-// Vue.prototype.$setFontSize = setGlobalFontSize;
-
 Vue.prototype.$echarts = echarts;
 
 Vue.prototype.$http = http;

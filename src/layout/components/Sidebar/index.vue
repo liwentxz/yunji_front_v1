@@ -1,24 +1,14 @@
 <template>
   <div class="sidebarContainer">
-    <div class="searchBox">
-      <i class="searchIconBox el-icon-search" v-if="isCollapse"></i>
-      <el-input
-        v-if="!isCollapse"
-        placeholder="请输入内容"
-        size="small"
-        v-model="input3"
-      >
+    <i class="searchIconBox el-icon-search" v-if="isCollapse"></i>
+    <div class="searchBox" v-else>
+      <el-input placeholder="请输入内容" size="small" v-model="input3">
       </el-input>
-      <el-button
-        v-if="!isCollapse"
-        size="small"
-        icon="el-icon-search"
-      ></el-button>
+      <el-button size="small" icon="el-icon-search"></el-button>
     </div>
-
     <el-menu
-      :default-active="activeMenu"
       class="menuContainer"
+      :default-active="activeMenu"
       :collapse="isCollapse"
       :unique-opened="true"
     >
@@ -63,20 +53,28 @@ export default {
 <style lang="scss" scoped>
 .sidebarContainer {
   width: 100%;
+  display: flex;
+  flex-direction: column;
   height: calc(100vh - 51px);
   background-color: #ffffff;
+  padding: 0 5px;
+}
+.menuContainer {
+  width: calc(100% - 10px);
+  height: 100%;
+  overflow: auto;
 }
 .searchBox {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 100%;
+  width: calc(100% - 10px);
   height: 40px;
   line-height: 40px;
 }
 .searchIconBox {
   font-size: 16px;
-  width: 100%;
+  width: calc(100% - 10px);
   height: 40px;
   line-height: 40px;
   text-align: center;

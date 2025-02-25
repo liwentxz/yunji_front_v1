@@ -14,7 +14,7 @@ const mutations = {
       state.sidebar.size = 12;
       sessionStorage.setItem("sidebarStatus", 1);
     } else {
-      state.sidebar.size = 3.5;
+      state.sidebar.size = 4;
       sessionStorage.setItem("sidebarStatus", 0);
     }
   },

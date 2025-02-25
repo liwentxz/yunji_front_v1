@@ -22,8 +22,11 @@ export default {
 
 <style lang="scss" scoped>
 .mainContainer {
-  width: 100%;
-  height: calc(100vh - 91px);
-  background-color: #f5f5f5;
+  width: calc(100% - 6px);
+  height: calc(100vh - 97px);
+  background-color: #fcfcfc;
+  border-radius: 10px;
+  margin: 3px;
+  overflow: auto;
 }
 </style>

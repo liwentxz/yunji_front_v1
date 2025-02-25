@@ -6,3 +6,25 @@ body,
   padding: 0;
   background-color: rgb(185, 239, 247);
 }
+
+/* 整个滚动条 */
+::-webkit-scrollbar {
+  width: 8px; /* 垂直滚动条的宽度，这里设为12px作为示例 */
+  height: 8px; /* 水平滚动条的高度，这里设为20px作为示例 */
+}
+
+/* 滚动条轨道 */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  background: #afafaf;
+  border-radius: 6px;
+}
+
+/* 悬停时滑块样式 */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
