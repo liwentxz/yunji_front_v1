@@ -49,9 +49,9 @@ export const constantRoutes = [
         meta: { title: "家具" },
       },
       {
-        path: "system/user/personalCenter",
-        name: "personalCenter",
-        component: () => import("@/views/system/user/personalCenter"),
+        path: "system/user/personal",
+        name: "personal",
+        component: () => import("@/views/system/user/personal/index"),
         meta: { title: "个人中心" },
       },
     ],

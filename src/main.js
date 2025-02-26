@@ -5,7 +5,8 @@ import router from "./router";
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 
-import "@/assets/styles/index.scss"; // ruoyi css
+import "@/assets/styles/index.scss";
+import "@/assets/styles/common.css";
 import axios from "axios";
 import http from "@/utils/http/index.js";
 import RelationGraph from "relation-graph";

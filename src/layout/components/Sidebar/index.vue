@@ -1,6 +1,6 @@
 <template>
   <div class="sidebarContainer">
-    <i class="searchIconBox el-icon-search" v-if="isCollapse"></i>
+    <div class="searchIconBox" v-if="isCollapse"></div>
     <div class="searchBox" v-else>
       <el-input placeholder="请输入内容" size="small" v-model="input3">
       </el-input>
@@ -52,7 +52,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .sidebarContainer {
-  width: 100%;
   display: flex;
   flex-direction: column;
   height: calc(100vh - 51px);
@@ -60,7 +59,7 @@ export default {
   padding: 0 5px;
 }
 .menuContainer {
-  width: calc(100% - 10px);
+  width: 100%;
   height: 100%;
   overflow: auto;
 }
@@ -68,13 +67,13 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: calc(100% - 10px);
+  width: 100%;
   height: 40px;
   line-height: 40px;
 }
 .searchIconBox {
   font-size: 16px;
-  width: calc(100% - 10px);
+  width: 100%;
   height: 40px;
   line-height: 40px;
   text-align: center;

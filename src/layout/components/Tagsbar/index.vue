@@ -64,7 +64,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .headerTagBox {
-  width: calc(100% - 6px);
   height: 40px;
   display: flex;
   flex-direction: row;

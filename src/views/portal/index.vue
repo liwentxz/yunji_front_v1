@@ -1,10 +1,10 @@
 <template>
-  <div class="portalContainer">
+  <div class="panel-container">
     <CardPanel style="width: 500px">
       <template v-slot:header>
-        <div class="headerBox">
-          <i class="headerIcon el-icon-collection-tag"></i>
-          <div class="headerText">用户分析</div>
+        <div class="card-header-box">
+          <i class="card-header-icon el-icon-collection-tag"></i>
+          <div class="card-header-text">用户分析</div>
         </div>
       </template>
       <div>
@@ -17,9 +17,9 @@
     </CardPanel>
     <CardPanel style="width: 800px">
       <template v-slot:header>
-        <div class="headerBox">
-          <i class="headerIcon el-icon-collection-tag"></i>
-          <div class="headerText">订单统计</div>
+        <div class="card-header-box">
+          <i class="card-header-icon el-icon-collection-tag"></i>
+          <div class="card-header-text">订单统计</div>
         </div>
       </template>
       <div>
@@ -50,33 +50,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.portalContainer {
-  width: auto;
-  padding: 3px;
-
-  .headerBox {
-    width: 100%;
-    height: 36px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-bottom: 1px solid #cecece;
-
-    .headerIcon {
-      width: 36px;
-      height: 36px;
-      font-size: 20px;
-      text-align: center;
-      line-height: 36px;
-      color: #53a8fd;
-    }
-    .headerText {
-      width: 100px;
-      height: 36px;
-      font-size: 16px;
-      line-height: 36px;
-    }
-  }
-}
-</style>
+<style lang="scss" scoped></style>

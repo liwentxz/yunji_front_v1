@@ -10,7 +10,7 @@
             <el-image
               class="userAvatarBox"
               style="width: 40px; height: 40px"
-              :src="url"
+              :src="avatar"
             ></el-image>
             <div class="userNameBox">李稳</div>
           </div>
@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "Headerbar",
   components: {},
@@ -33,12 +34,15 @@ export default {
       url: "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
     };
   },
+  computed: {
+    ...mapGetters(["avatar"]),
+  },
   methods: {
     handleCommand(command) {
       if (command == "person") {
         let menuObj = {
           menuName: "个人中心",
-          path: "/system/user/personalCenter",
+          path: "/system/user/personal",
         };
         this.$store.dispatch("tags/addTagList", menuObj);
         this.$router.push(menuObj.path);
