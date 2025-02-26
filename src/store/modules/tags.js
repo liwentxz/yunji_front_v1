@@ -19,24 +19,16 @@ const mutations = {
       }
     }
   },
-
   DEL_OTHERS_TAG_LIST: (state, item) => {
     state.tagList = state.tagList.filter((v) => {
-      return v.path === item.path;
+      return v.name === "首页" || v.path === item.path;
     });
   },
   DEL_ALL_TAG_LIST: (state) => {
-    const affixTags = state.tagList.filter((tag) => tag.meta.affix);
-    state.tagList = affixTags;
+    const list = state.tagList.filter((v) => v.name == "首页");
+    state.tagList = list;
   },
-  UPDATE_TAG_LIST: (state, item) => {
-    for (let v of state.tagList) {
-      if (v.path === item.path) {
-        v = Object.assign(v, item);
-        break;
-      }
-    }
-  },
+
   DEL_RIGHT_TAG_LIST: (state, item) => {
     const index = state.tagList.findIndex((v) => v.path === item.path);
     if (index === -1) {
@@ -75,9 +67,6 @@ const actions = {
   },
   delAllTagList({ commit }) {
     commit("DEL_ALL_TAG_LIST");
-  },
-  updateTagList({ commit }, item) {
-    commit("UPDATE_TAG_LIST", item);
   },
   delRightTagList({ commit }, item) {
     commit("DEL_RIGHT_TAG_LIST", item);

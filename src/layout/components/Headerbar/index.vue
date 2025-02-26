@@ -1,9 +1,9 @@
 <template>
-  <div class="layout_top">
+  <div class="layout-top">
     <div class="lesseeTitleBox">
       <div class="titleText">云际科技</div>
     </div>
-    <div class="toolBox">
+    <div class="tool-box">
       <el-dropdown @command="handleCommand">
         <span class="el-dropdown-link">
           <div class="userInfoBox">
@@ -52,7 +52,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.layout_top {
+.layout-top {
   width: 100%;
   height: 50px;
   display: flex;
@@ -75,7 +75,7 @@ export default {
     }
   }
 
-  .toolBox {
+  .tool-box {
     height: 100%;
     display: flex;
     flex-direction: row;
