@@ -16,6 +16,9 @@ import "splitpanes/dist/splitpanes.css";
 
 import "./routeGuard";
 
+import IconPark from "@/plugins/iconpark";
+Vue.use(IconPark);
+
 Vue.use(ElementUI);
 Vue.component("splitpanes", Splitpanes);
 Vue.component("pane", Pane);

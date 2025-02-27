@@ -1,6 +1,5 @@
 <template>
   <div class="panel-container">
-    <el-button type="primary" @click="openDialog">打开</el-button>
     <CardPanel style="width: 500px">
       <template v-slot:header>
         <div class="card-header-box">

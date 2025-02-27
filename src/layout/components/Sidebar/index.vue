@@ -54,7 +54,7 @@ export default {
 .sidebarContainer {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 51px);
+  height: calc(100vh - 50px);
   background-color: #ffffff;
   padding: 0 5px;
 }

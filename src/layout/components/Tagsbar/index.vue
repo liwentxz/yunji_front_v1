@@ -23,8 +23,8 @@
 
     <div class="tag-right-box">
       <el-dropdown @command="handleCommand">
-        <span class="el-dropdown-link">
-          <i class="icon-font el-icon-setting"></i>
+        <span style="cursor: pointer">
+          <more-app theme="outline" size="20" fill="#333" />
         </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item command="closeOthers"
@@ -113,7 +113,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .icon-font {
-  font-size: 22px;
+  font-size: 28px;
   cursor: pointer;
 }
 .tag-box {
@@ -123,6 +123,8 @@ export default {
   align-items: center;
   background-color: #fff;
   padding: 0 8px;
+  box-sizing: border-box;
+  border-bottom: 2px solid #e6e6e6;
 
   .collapse-btn {
     height: 30px;
@@ -144,5 +146,6 @@ export default {
   flex-direction: row;
   align-items: center;
   margin-left: auto;
+  padding-right: 10px;
 }
 </style>

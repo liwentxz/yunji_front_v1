@@ -5,7 +5,7 @@
     </div>
     <div class="tool-box">
       <el-dropdown @command="handleCommand">
-        <span class="el-dropdown-link">
+        <span>
           <div class="userInfoBox">
             <el-image
               class="userAvatarBox"
@@ -59,6 +59,7 @@ export default {
   flex-direction: row;
   align-items: center;
   background-color: #ffffff;
+  box-sizing: border-box;
   border-bottom: 1px solid #cfcfcf;
 
   .lesseeTitleBox {

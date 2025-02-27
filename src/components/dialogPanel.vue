@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  name: "DialogModule",
+  name: "DialogPanel",
   components: {},
   props: {
     visible: {
@@ -64,5 +64,10 @@ export default {
   line-height: 30px;
   font-size: 18px;
   border-bottom: 1px solid #cdcdcd;
+  padding: 10px 20px;
+}
+.dialog-box :deep(.el-dialog__headerbtn) {
+  top: 10px;
+  font-size: 20px;
 }
 </style>

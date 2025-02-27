@@ -25,12 +25,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.cardBox {
-  margin: 10px;
-}
-.cardContent {
-  padding: 5px;
-}
 .cardBox :deep(.el-card__body) {
   padding: 0;
 }

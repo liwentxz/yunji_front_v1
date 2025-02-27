@@ -7,7 +7,7 @@
         class="img-circle img-lg"
       />
     </div>
-    <DialogModule
+    <DialogPanel
       :visible.sync="dialogVisible"
       :dialogWidth="800"
       @open="modalOpened"
@@ -90,7 +90,7 @@
           </el-row>
         </div>
       </template>
-    </DialogModule>
+    </DialogPanel>
   </div>
 </template>
 
@@ -99,11 +99,11 @@ import store from "@/store";
 import { VueCropper } from "vue-cropper";
 // import { uploadAvatar } from "@/api/system/user";
 import { debounce } from "@/utils";
-import DialogModule from "@/components/dialogModule.vue";
+import DialogPanel from "@/components/dialogPanel.vue";
 
 export default {
   name: "UserAvatar",
-  components: { VueCropper, DialogModule },
+  components: { VueCropper, DialogPanel },
   data() {
     return {
       // 是否显示弹出层

@@ -50,9 +50,15 @@ export const constantRoutes = [
       },
       {
         path: "system/user/personal",
-        name: "personal",
+        name: "Personal",
         component: () => import("@/views/system/user/personal/index"),
         meta: { title: "个人中心" },
+      },
+      {
+        path: "system/user/manage",
+        name: "Manage",
+        component: () => import("@/views/system/user/manage/index"),
+        meta: { title: "人员管理" },
       },
     ],
   },
