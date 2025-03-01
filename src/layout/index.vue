@@ -42,7 +42,17 @@ export default {
   background-color: #fafafa;
 }
 .yunji_layout :deep(.splitpanes__splitter) {
-  width: 2px;
-  background: linear-gradient(to right, #ebebeb, #f7f7f7);
+  width: 6px;
+  position: relative;
+}
+
+/* 添加手柄图标 */
+::v-deep .splitpanes__splitter::before {
+  content: "|";
+  color: #c5c5c5;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 </style>

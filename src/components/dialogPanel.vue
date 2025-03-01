@@ -1,20 +1,18 @@
 <template>
-  <div class="dialog-box">
-    <el-dialog
-      :visible.sync="curDialogVisible"
-      :width="dialogWidth + 'px'"
-      @open="handleDialogOpen"
-      @close="handleDialogClose"
-    >
-      <template #title>
-        <slot name="title"></slot>
-      </template>
-      <slot></slot>
-      <template #footer>
-        <slot name="footer"></slot>
-      </template>
-    </el-dialog>
-  </div>
+  <el-dialog
+    :visible.sync="curDialogVisible"
+    :width="dialogWidth + 'px'"
+    @open="handleDialogOpen"
+    @close="handleDialogClose"
+  >
+    <template #title>
+      <slot name="title"></slot>
+    </template>
+    <slot></slot>
+    <template #footer>
+      <slot name="footer"></slot>
+    </template>
+  </el-dialog>
 </template>
 
 <script>
@@ -56,17 +54,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.dialog-box :deep(.el-dialog__body) {
+::v-deep .el-dialog__body {
   padding: 20px;
 }
-.dialog-box :deep(.el-dialog__header) {
+::v-deep .el-dialog__header {
   height: 30px;
   line-height: 30px;
-  font-size: 18px;
+  font-size: 20px;
   border-bottom: 1px solid #cdcdcd;
   padding: 10px 20px;
 }
-.dialog-box :deep(.el-dialog__headerbtn) {
+::v-deep .el-dialog__headerbtn {
   top: 10px;
   font-size: 20px;
 }

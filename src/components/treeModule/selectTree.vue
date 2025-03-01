@@ -1,25 +1,43 @@
 <template>
-  <el-tree
-    :props="props"
-    :load="loadNode"
-    lazy
-    show-checkbox
-    @check-change="handleCheckChange"
-  >
-  </el-tree>
+  <div>
+    <div class="search-box">
+      <el-input placeholder="请输入内容" size="small" v-model="input">
+      </el-input>
+      <el-button size="small" icon="el-icon-search"></el-button>
+    </div>
+    <el-tree
+      :data="treeData"
+      :props="defaultProps"
+      show-checkbox
+      @check-change="handleCheckChange"
+      @node-click="handleNodeClick"
+    >
+    </el-tree>
+  </div>
 </template>
 
 <script>
+import treeList from "@/api/treeData";
+import { changeListToTree } from "@/utils/convert.js";
 export default {
   name: "SelectTree",
   data() {
     return {
-      props: {
-        label: "name",
-        children: "zones",
+      input: "",
+      defaultProps: {
+        children: "children",
+        label: "label",
       },
-      count: 1,
+      treeData: [],
     };
+  },
+  mounted() {
+    let params = {
+      idKey: "id",
+      parentIdKey: "parentId",
+      childrenKey: "children",
+    };
+    this.treeData = changeListToTree(treeList, params);
   },
   methods: {
     handleCheckChange(data, checked, indeterminate) {
@@ -28,39 +46,16 @@ export default {
     handleNodeClick(data) {
       console.log(data);
     },
-    loadNode(node, resolve) {
-      if (node.level === 0) {
-        return resolve([{ name: "region1" }, { name: "region2" }]);
-      }
-      if (node.level > 3) return resolve([]);
-
-      var hasChild;
-      if (node.data.name === "region1") {
-        hasChild = true;
-      } else if (node.data.name === "region2") {
-        hasChild = false;
-      } else {
-        hasChild = Math.random() > 0.5;
-      }
-
-      setTimeout(() => {
-        var data;
-        if (hasChild) {
-          data = [
-            {
-              name: "zone" + this.count++,
-            },
-            {
-              name: "zone" + this.count++,
-            },
-          ];
-        } else {
-          data = [];
-        }
-
-        resolve(data);
-      }, 500);
-    },
   },
 };
 </script>
+<style lang="scss" scoped>
+.search-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+}
+</style>

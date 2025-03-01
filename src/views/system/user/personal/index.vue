@@ -35,7 +35,7 @@
 
 <script>
 import UserAvatar from "./userAvatar.vue";
-import CardPanel from "@/components/cardPanel.vue";
+import CardPanel from "@/components/CardPanel.vue";
 export default {
   name: "",
   components: { CardPanel, UserAvatar },

@@ -1,8 +1,8 @@
 <template>
   <div class="sidebarContainer">
-    <div class="searchIconBox" v-if="isCollapse"></div>
+    <div class="lessee-img" v-if="isCollapse"></div>
     <div class="searchBox" v-else>
-      <el-input placeholder="请输入内容" size="small" v-model="input3">
+      <el-input placeholder="请输入内容" size="small" v-model="input">
       </el-input>
       <el-button size="small" icon="el-icon-search"></el-button>
     </div>
@@ -29,7 +29,7 @@ export default {
   },
   data() {
     return {
-      input3: "",
+      input: "",
     };
   },
   computed: {
@@ -68,11 +68,10 @@ export default {
   flex-direction: row;
   align-items: center;
   width: 100%;
-  height: 40px;
-  line-height: 40px;
+  height: 45px;
+  line-height: 45px;
 }
-.searchIconBox {
-  font-size: 16px;
+.lessee-img {
   width: 100%;
   height: 40px;
   line-height: 40px;

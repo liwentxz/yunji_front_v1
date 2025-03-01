@@ -135,6 +135,7 @@ export default {
   }
 
   .tag-item {
+    font-size: 14px;
     margin-left: 8px;
     cursor: pointer;
   }

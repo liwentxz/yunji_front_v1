@@ -99,7 +99,7 @@ import store from "@/store";
 import { VueCropper } from "vue-cropper";
 // import { uploadAvatar } from "@/api/system/user";
 import { debounce } from "@/utils";
-import DialogPanel from "@/components/dialogPanel.vue";
+import DialogPanel from "@/components/DialogPanel.vue";
 
 export default {
   name: "UserAvatar",
@@ -229,7 +229,7 @@ export default {
   bottom: 0;
   color: #eee;
   background: rgba(0, 0, 0, 0.5);
-  font-size: 24px;
+  font-size: 26px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -7,18 +7,16 @@ import "element-ui/lib/theme-chalk/index.css";
 
 import "@/assets/styles/index.scss";
 import "@/assets/styles/common.css";
-import axios from "axios";
 import http from "@/utils/http/index.js";
 import RelationGraph from "relation-graph";
 import store from "./store";
 import { Splitpanes, Pane } from "splitpanes";
 import "splitpanes/dist/splitpanes.css";
-
+import { resetForm } from "@/utils/form.js";
 import "./routeGuard";
-
 import IconPark from "@/plugins/iconpark";
-Vue.use(IconPark);
 
+Vue.use(IconPark);
 Vue.use(ElementUI);
 Vue.component("splitpanes", Splitpanes);
 Vue.component("pane", Pane);
@@ -32,10 +30,11 @@ require("echarts/lib/component/title");
 require("echarts/lib/component/legend");
 
 Vue.prototype.$echarts = echarts;
-
 Vue.prototype.$http = http;
-
 Vue.config.productionTip = false;
+
+// 全局方法挂载
+Vue.prototype.resetForm = resetForm;
 
 new Vue({
   router,

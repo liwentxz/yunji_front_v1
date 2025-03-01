@@ -9,4 +9,11 @@ module.exports = {
       },
     },
   },
+  css: {
+    loaderOptions: {
+      scss: {
+        additionalData: `@import "@/assets/styles/variables.scss";`, // 自动注入全局变量
+      },
+    },
+  },
 };
