@@ -12,6 +12,7 @@
       v-for="tag in tagList"
       :key="tag.path"
       :closable="tag.name != '首页'"
+      :style="{ color: isActive(tag) ? '#409eff' : '#000000' }"
       :color="isActive(tag) ? '#ecf5ff' : ''"
       effect="plain"
       :disable-transitions="false"
@@ -135,7 +136,7 @@ export default {
   }
 
   .tag-item {
-    font-size: 14px;
+    font-size: $default_font_size;
     margin-left: 8px;
     cursor: pointer;
   }

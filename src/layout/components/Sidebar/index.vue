@@ -4,7 +4,11 @@
     <div class="searchBox" v-else>
       <el-input placeholder="请输入内容" size="small" v-model="input">
       </el-input>
-      <el-button size="small" icon="el-icon-search"></el-button>
+      <el-button
+        class="search-btn"
+        size="small"
+        icon="el-icon-search"
+      ></el-button>
     </div>
     <el-menu
       class="menuContainer"
@@ -76,5 +80,8 @@ export default {
   height: 40px;
   line-height: 40px;
   text-align: center;
+}
+.search-btn {
+  font-size: $default-font-size;
 }
 </style>

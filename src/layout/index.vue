@@ -41,9 +41,11 @@ export default {
   width: 100vw;
   background-color: #fafafa;
 }
-.yunji_layout :deep(.splitpanes__splitter) {
+
+::v-deep .splitpanes__splitter {
   width: 6px;
   position: relative;
+  background-color: #f8f8f8;
 }
 
 /* 添加手柄图标 */

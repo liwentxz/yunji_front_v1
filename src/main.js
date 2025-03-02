@@ -12,9 +12,9 @@ import RelationGraph from "relation-graph";
 import store from "./store";
 import { Splitpanes, Pane } from "splitpanes";
 import "splitpanes/dist/splitpanes.css";
-import { resetForm } from "@/utils/form.js";
 import "./routeGuard";
 import IconPark from "@/plugins/iconpark";
+import { resetForm } from "@/utils/form.js";
 
 Vue.use(IconPark);
 Vue.use(ElementUI);

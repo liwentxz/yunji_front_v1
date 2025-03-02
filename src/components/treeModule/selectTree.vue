@@ -3,7 +3,11 @@
     <div class="search-box">
       <el-input placeholder="请输入内容" size="small" v-model="input">
       </el-input>
-      <el-button size="small" icon="el-icon-search"></el-button>
+      <el-button
+        class="search-btn"
+        size="small"
+        icon="el-icon-search"
+      ></el-button>
     </div>
     <el-tree
       :data="treeData"
@@ -57,5 +61,8 @@ export default {
   width: 100%;
   height: 40px;
   line-height: 40px;
+}
+.search-btn {
+  font-size: $default-font-size;
 }
 </style>

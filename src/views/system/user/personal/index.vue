@@ -76,7 +76,7 @@ export default {
   border-top: 1px solid #e7eaec;
   margin-bottom: -1px;
   padding: 11px 0px;
-  font-size: 14px;
+  font-size: $default_font_size;
 }
 
 .pull-right {

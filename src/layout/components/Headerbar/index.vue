@@ -101,7 +101,7 @@ export default {
     .userNameBox {
       margin: 0 10px;
       color: #000;
-      font-size: 14px;
+      font-size: $default_font_size;
     }
   }
 }

@@ -203,7 +203,7 @@ export default {
       animation-fill-mode: forwards;
     }
     &__info {
-      font-size: 14px;
+      font-size: $default_font_size;
       line-height: 21px;
       color: grey;
       opacity: 0;
@@ -223,7 +223,7 @@ export default {
       text-align: center;
       color: #ffffff;
       opacity: 0;
-      font-size: 14px;
+      font-size: $default_font_size;
       line-height: 36px;
       cursor: pointer;
       animation-name: slideUp;

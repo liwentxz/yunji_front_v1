@@ -19,19 +19,19 @@ const formList = [
   },
   {
     label: "姓名",
-    code: "nameq",
+    code: "namea",
     value: "",
     placeholder: "请输入姓名",
   },
   {
     label: "年龄",
-    code: "ageq",
+    code: "agea",
     value: "",
     placeholder: "请输入年龄",
   },
   {
     label: "邮箱",
-    code: "emailq",
+    code: "emaila",
     value: "",
     placeholder: "请输入邮箱",
   },
