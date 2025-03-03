@@ -11,11 +11,18 @@
       <MainPanelHeader>
         <MainPanelTitle></MainPanelTitle>
         <el-form-item style="margin-left: auto">
-          <AllButtons @resetForm="handelResetForm"></AllButtons>
+          <AllButtons
+            @resetForm="handelResetForm"
+            @queryFunc="handelQueryFunc"
+          ></AllButtons>
         </el-form-item>
       </MainPanelHeader>
 
-      <el-row :gutter="15" v-for="(row, rowIndex) in formData" :key="rowIndex">
+      <el-row
+        :gutter="15"
+        v-for="(row, rowIndex) in filterData"
+        :key="rowIndex"
+      >
         <el-col :span="6" v-for="(col, colIndex) in row" :key="colIndex">
           <el-form-item :prop="col.code">
             <template #label>
@@ -31,11 +38,21 @@
         </el-col>
       </el-row>
     </el-form>
+    <DialogPanel
+      :visible.sync="dialogVisible"
+      :dialogWidth="800"
+      @open="modalOpened"
+      @close="closeDialog"
+    >
+      <template #title>
+        <div>{{ title }}</div>
+      </template>
+      <template #default></template>
+    </DialogPanel>
   </div>
 </template>
 
 <script>
-import formList from "@/api/formData";
 import { listTo2D } from "@/utils/convert.js";
 import MainPanelTitle from "./MainPanelTitle.vue";
 import MainPanelHeader from "./MainPanelHeader.vue";
@@ -43,10 +60,17 @@ import AllButtons from "./AllButtons.vue";
 export default {
   name: "ConditionPanel",
   components: { MainPanelTitle, MainPanelHeader, AllButtons },
+  props: {
+    filterList: {
+      type: Array,
+    },
+  },
   data() {
     return {
-      formData: [],
+      filterData: [],
       filterForm: this.initFilterForm(),
+      dialogVisible: false,
+      title: "",
     };
   },
   created() {
@@ -55,11 +79,11 @@ export default {
   mounted() {},
   methods: {
     initFormData() {
-      this.formData = listTo2D(formList, 2, 4);
+      this.filterData = listTo2D(this.filterList, 1, 4);
     },
     initFilterForm() {
       let result = {};
-      formList.forEach((item) => {
+      this.filterList.forEach((item) => {
         result[item.code] = item.value;
       });
       return result;
@@ -67,7 +91,11 @@ export default {
     handelResetForm() {
       this.resetForm("filterForm");
     },
-    onSubmit() {},
+    handelQueryFunc() {
+      this.$emit("queryfilterFunc", this.filterForm);
+    },
+    modalOpened() {},
+    closeDialog() {},
   },
 };
 </script>

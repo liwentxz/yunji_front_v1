@@ -1,6 +1,8 @@
 <template>
   <div>
-    <el-button class="btn" type="primary" size="mini">查询</el-button>
+    <el-button class="btn" type="primary" size="mini" @click="queryFunc()"
+      >查询</el-button
+    >
     <el-button class="btn" size="mini" @click="resetForm()">重置</el-button>
     <el-button class="btn" size="mini">设置</el-button>
   </div>
@@ -21,6 +23,9 @@ export default {
   methods: {
     resetForm() {
       this.$emit("resetForm");
+    },
+    queryFunc() {
+      this.$emit("queryFunc");
     },
   },
 };

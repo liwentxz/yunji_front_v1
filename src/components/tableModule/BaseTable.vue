@@ -10,15 +10,15 @@
   >
     <el-table-column
       v-for="column in columns"
-      :key="column.index"
-      :prop="column.prop"
+      :key="column.code"
+      :prop="column.code"
       :label="column.label"
       width="180"
       :sortable="column.sort == 1 ? true : false"
       align="center"
     >
       <template slot-scope="scope">
-        <span>{{ scope.row[column.prop] }}</span>
+        <span>{{ scope.row[column.code] }}</span>
       </template>
     </el-table-column>
   </el-table>
@@ -73,52 +73,15 @@ export default {
     width: {
       type: String,
     },
+    columns: {
+      type: Array,
+    },
+    tableData: {
+      type: Array,
+    },
   },
   data() {
-    return {
-      columns: [
-        {
-          index: 1,
-          prop: "user_id",
-          label: "用户编号",
-          sort: 0,
-        },
-        {
-          index: 2,
-          prop: "user_name",
-          label: "用户名称",
-          sort: 0,
-        },
-        {
-          index: 3,
-          prop: "nick_name",
-          label: "昵称",
-          sort: 0,
-        },
-        {
-          index: 4,
-          prop: "create_time",
-          label: "创建日期",
-          sort: 1,
-        },
-      ],
-      tableData: [
-        {
-          user_id: "001",
-          user_name: "李稳",
-          nick_name: "liwen",
-          create_time: "2025-02-27",
-          status: "正常",
-        },
-        {
-          user_id: "002",
-          user_name: "赵梦",
-          nick_name: "zhaomeng",
-          create_time: "2025-02-26",
-          status: "正常",
-        },
-      ],
-    };
+    return {};
   },
   methods: {},
 };
