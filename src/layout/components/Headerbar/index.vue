@@ -1,8 +1,9 @@
 <template>
   <div class="layout-top">
-    <div class="lesseeTitleBox">
-      <div class="titleText">云际科技</div>
+    <div class="lesseeInfoBox">
+      <el-image style="height: 30px" :src="logoTitle"></el-image>
     </div>
+    <Topbar />
     <div class="tool-box">
       <el-dropdown @command="handleCommand">
         <span>
@@ -26,12 +27,13 @@
 
 <script>
 import { mapGetters } from "vuex";
+import { Topbar } from "../../components";
 export default {
   name: "Headerbar",
-  components: {},
+  components: { Topbar },
   data() {
     return {
-      url: "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
+      logoTitle: require("../../../assets/images/logoTitle.png"),
     };
   },
   computed: {
@@ -62,18 +64,13 @@ export default {
   box-sizing: border-box;
   border-bottom: 1px solid #cfcfcf;
 
-  .lesseeTitleBox {
+  .lesseeInfoBox {
     max-width: 500px;
     height: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-left: 20px;
-    background-color: #eaeaea;
-
-    .titleText {
-      font-size: 26px;
-    }
   }
 
   .tool-box {

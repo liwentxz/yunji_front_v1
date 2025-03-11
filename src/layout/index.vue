@@ -1,7 +1,11 @@
 <template>
   <div id="layout" class="yunji_layout">
     <Headerbar />
-    <splitpanes>
+    <div v-if="true">
+      <Tagsbar v-if="false" />
+      <app-main />
+    </div>
+    <splitpanes v-if="false">
       <pane :size="menuPaneSize" min-size="5">
         <Sidebar />
       </pane>
@@ -34,6 +38,7 @@ export default {
       return this.sidebar.size;
     },
   },
+  mounted() {},
 };
 </script>
 <style lang="scss" scoped>

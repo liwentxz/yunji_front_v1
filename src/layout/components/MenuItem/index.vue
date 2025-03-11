@@ -1,15 +1,15 @@
 <template>
-  <div class="menuItemBox">
+  <div class="menu-item-box" :style="{ width: 100 + 'px' }">
     <template v-if="menuItem.children.length == 0">
       <el-menu-item :index="menuItem.path" @click="menuItemSelected(menuItem)">
-        <i :class="menuItem.icon"></i>
-        <template slot="title">{{ menuItem.menuName }}</template>
+        <template slot="title">
+          {{ menuItem.menuName }}
+        </template>
       </el-menu-item>
     </template>
     <el-submenu v-else :index="menuItem.path" popper-append-to-body>
       <template slot="title">
-        <i :class="menuItem.icon"></i>
-        <span v-if="!isCollapse"> {{ menuItem.menuName }}</span>
+        {{ menuItem.menuName }}
       </template>
       <menu-item
         v-for="child in menuItem.children"
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from "vuex";
+import { mapGetters } from "vuex";
 export default {
   name: "MenuItem",
   components: {},
@@ -56,4 +56,38 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.menu-item-box {
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  ::v-deep(.el-menu-item) {
+    height: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  ::v-deep(.el-submenu) {
+    height: inherit;
+  }
+  ::v-deep(.el-submenu__title) {
+    height: inherit;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  ::v-deep(.el-submenu__icon-arrow) {
+    display: none !important;
+  }
+
+  .el-menu-item .el-icon-arrow-down {
+    display: none !important;
+  }
+}
+</style>

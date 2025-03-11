@@ -1,12 +1,5 @@
 <template>
   <div class="tag-box">
-    <div class="tag-left-box">
-      <div class="collapse-btn" @click="collapseSidebar()">
-        <i v-if="isCollapse" class="icon-font el-icon-s-unfold"></i>
-        <i v-else class="icon-font el-icon-s-fold"></i>
-      </div>
-    </div>
-
     <el-tag
       class="tag-item"
       v-for="tag in tagList"
@@ -52,9 +45,6 @@ export default {
     menuList() {
       return this.$store.state.menus.menuList;
     },
-    isCollapse() {
-      return !this.sidebar.opened;
-    },
     tagList() {
       return this.$store.state.tags.tagList;
     },
@@ -66,9 +56,6 @@ export default {
     isActive(item) {
       this.activeTag = item;
       return item.path === this.$route.path;
-    },
-    collapseSidebar() {
-      this.$store.dispatch("app/toggleSideBar");
     },
     filterTags(menus) {
       menus.forEach((item) => {
@@ -113,10 +100,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.icon-font {
-  font-size: 28px;
-  cursor: pointer;
-}
 .tag-box {
   height: 40px;
   display: flex;
@@ -126,14 +109,6 @@ export default {
   padding: 0 8px;
   box-sizing: border-box;
   border-bottom: 2px solid #e6e6e6;
-
-  .collapse-btn {
-    height: 30px;
-    line-height: 30px;
-    font-size: 26px;
-    color: #5a5a5a;
-    text-align: center;
-  }
 
   .tag-item {
     font-size: $default_font_size;

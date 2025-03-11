@@ -1,15 +1,5 @@
 <template>
   <div class="sidebarContainer">
-    <div class="lessee-img" v-if="isCollapse"></div>
-    <div class="searchBox" v-else>
-      <el-input placeholder="请输入内容" size="small" v-model="input">
-      </el-input>
-      <el-button
-        class="search-btn"
-        size="small"
-        icon="el-icon-search"
-      ></el-button>
-    </div>
     <el-menu
       class="menuContainer"
       :default-active="activeMenu"
@@ -18,12 +8,18 @@
     >
       <menu-item v-for="menu in menuList" :key="menu.path" :menu-item="menu" />
     </el-menu>
+    <div class="tag-left-box">
+      <div class="collapse-btn" @click="collapseSidebar()">
+        <i v-if="isCollapse" class="icon-font el-icon-s-unfold"></i>
+        <i v-else class="icon-font el-icon-s-fold"></i>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 // 引入递归组件
-import MenuItem from "./menu_item.vue";
+import { MenuItem } from "../../components";
 import { mapGetters, mapState } from "vuex";
 
 export default {
@@ -50,7 +46,11 @@ export default {
       return path;
     },
   },
-  methods: {},
+  methods: {
+    collapseSidebar() {
+      this.$store.dispatch("app/toggleSideBar");
+    },
+  },
   mounted() {},
 };
 </script>
@@ -67,21 +67,17 @@ export default {
   height: 100%;
   overflow: auto;
 }
-.searchBox {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  height: 45px;
-  line-height: 45px;
-}
-.lessee-img {
-  width: 100%;
-  height: 40px;
-  line-height: 40px;
+
+.collapse-btn {
+  height: 30px;
+  line-height: 30px;
+  font-size: 26px;
+  color: #5a5a5a;
   text-align: center;
-}
-.search-btn {
-  font-size: $default-font-size;
+
+  .icon-font {
+    font-size: 28px;
+    cursor: pointer;
+  }
 }
 </style>
