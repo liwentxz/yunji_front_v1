@@ -5,3 +5,4 @@ export { default as TopSidebar } from "./TopSidebar/index.vue";
 export { default as Sidebar } from "./Sidebar/index.vue";
 export { default as Headerbar } from "./Headerbar/index.vue";
 export { default as Tagsbar } from "./Tagsbar/index.vue";
+export { default as Noticebar } from "./Noticebar/index.vue";

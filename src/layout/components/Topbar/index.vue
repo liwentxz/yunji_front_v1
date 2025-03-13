@@ -4,6 +4,7 @@
       class="topbar-item-box"
       v-for="menu in menuList"
       :key="menu.path"
+      :style="{ color: activeMenu == menu.path ? '#409eff' : '' }"
       @click="menuItemSelected(menu)"
     >
       {{ menu.menuName }}
@@ -21,6 +22,11 @@ export default {
   computed: {
     menuList() {
       return this.$store.state.menus.menuList;
+    },
+    activeMenu() {
+      const route = this.$route;
+      const { path } = route;
+      return path;
     },
   },
   mounted() {},

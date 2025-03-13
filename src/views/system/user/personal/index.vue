@@ -3,7 +3,7 @@
     <CardPanel style="width: 400px">
       <template v-slot:header>
         <div class="card-header-box">
-          <i class="card-header-icon el-icon-collection-tag"></i>
+          <iconpark-icon name="people" size="22"></iconpark-icon>
           <div class="card-header-text">个人信息</div>
         </div>
       </template>

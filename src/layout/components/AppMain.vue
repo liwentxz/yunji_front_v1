@@ -23,7 +23,6 @@ export default {
 <style lang="scss" scoped>
 .mainContainer {
   width: 100%;
-  height: calc(100vh - 90px);
   box-sizing: border-box;
   padding: 3px;
   overflow: auto;

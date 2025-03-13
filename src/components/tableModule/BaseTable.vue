@@ -22,44 +22,6 @@
       </template>
     </el-table-column>
   </el-table>
-
-  <!-- <el-table-column prop="date">
-    <template #header="scope">
-      <div class="custom-header">
-        <el-tooltip effect="dark" content="这是自定义提示" placement="top">
-          <span>日期</span>
-        </el-tooltip>
-        <el-button @click="handleSort" size="mini" icon="el-icon-sort"></el-button>
-      </div>
-    </template>
-  </el-table-column> -->
-
-  <!-- 带排序按钮的列 -->
-  <!-- <el-table-column prop="date" width="180">
-    <template #header="{ column }">
-      <div class="header-container">
-        <span>{{ column.label }}</span>
-        <div class="header-actions">
-          <el-tooltip content="升序" placement="top">
-            <i class="el-icon-sort-up" @click="sortDate('asc')"></i>
-          </el-tooltip>
-          <el-tooltip content="降序" placement="top">
-            <i class="el-icon-sort-down" @click="sortDate('desc')"></i>
-          </el-tooltip>
-        </div>
-      </div>
-    </template>
-  </el-table-column> -->
-
-  <!-- 带自定义图标的列 -->
-  <!-- <el-table-column prop="status">
-    <template #header>
-      <div class="status-header">
-        <el-icon class="status-icon"><warning /></el-icon>
-        <span>状态标识</span>
-      </div>
-    </template>
-  </el-table-column> -->
 </template>
 
 <script>

@@ -4,7 +4,7 @@
       <CardPanel style="width: 500px">
         <template v-slot:header>
           <div class="card-header-box">
-            <i class="card-header-icon el-icon-collection-tag"></i>
+            <iconpark-icon name="peoples" size="22"></iconpark-icon>
             <div class="card-header-text">用户分析</div>
           </div>
         </template>
@@ -19,7 +19,7 @@
       <CardPanel style="width: 800px">
         <template v-slot:header>
           <div class="card-header-box">
-            <i class="card-header-icon el-icon-collection-tag"></i>
+            <iconpark-icon name="order" size="22"></iconpark-icon>
             <div class="card-header-text">订单统计</div>
           </div>
         </template>

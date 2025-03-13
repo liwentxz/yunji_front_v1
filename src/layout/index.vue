@@ -2,8 +2,7 @@
   <div id="layout" class="yunji_layout">
     <Headerbar />
     <div v-if="true">
-      <Tagsbar v-if="false" />
-      <app-main />
+      <app-main style="height: calc(100vh - 60px)" />
     </div>
     <splitpanes v-if="false">
       <pane :size="menuPaneSize" min-size="5">
@@ -11,7 +10,7 @@
       </pane>
       <pane :size="100 - menuPaneSize" min-size="60">
         <Tagsbar />
-        <app-main />
+        <app-main style="height: calc(100vh - 100px)" />
       </pane>
     </splitpanes>
   </div>

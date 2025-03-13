@@ -1,29 +1,27 @@
 <template>
-  <div class="main-panel-header">
-    <slot></slot>
-  </div>
+  <div class="notice-box"></div>
 </template>
-
 <script>
 export default {
-  name: "MainPanelHeader",
+  name: "Noticebar",
   components: {},
   data() {
     return {};
   },
   computed: {},
-  created() {},
   mounted() {},
   methods: {},
 };
 </script>
-
 <style lang="scss" scoped>
-.main-panel-header {
-  width: 100%;
-  height: 60px;
+.notice-box {
+  height: 40px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  background-color: #fff;
+  padding: 0 8px;
+  box-sizing: border-box;
+  border-bottom: 2px solid #e6e6e6;
 }
 </style>

@@ -18,7 +18,7 @@
     <div class="tag-right-box">
       <el-dropdown @command="handleCommand">
         <span style="cursor: pointer">
-          <more-app theme="outline" size="20" fill="#333" />
+          <iconpark-icon name="moreapp" size="20"></iconpark-icon>
         </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item command="closeOthers"

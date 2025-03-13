@@ -38,15 +38,33 @@ export const constantRoutes = [
       },
       {
         path: "front/order",
-        name: "order",
+        name: "Order",
         component: () => import("@/views/front/order/index"),
         meta: { title: "商品订购" },
       },
       {
         path: "front/order/diet/vegetable",
-        name: "vegetable",
-        component: () => import("@/views/front/order/diet/vegetable"),
+        name: "Vegetable",
+        component: () => import("@/views/front/order/diet/index"),
         meta: { title: "蔬菜" },
+      },
+      {
+        path: "front/order/diet/fruit",
+        name: "Fruit",
+        component: () => import("@/views/front/order/diet/index"),
+        meta: { title: "水果" },
+      },
+      {
+        path: "front/order/diet/milk",
+        name: "Milk",
+        component: () => import("@/views/front/order/diet/index"),
+        meta: { title: "鲜奶" },
+      },
+      {
+        path: "front/order/diet/snack",
+        name: "Snack",
+        component: () => import("@/views/front/order/diet/index"),
+        meta: { title: "零食" },
       },
       {
         path: "system/user/personal",

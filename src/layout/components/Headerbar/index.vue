@@ -56,11 +56,11 @@ export default {
 <style lang="scss" scoped>
 .layout-top {
   width: 100%;
-  height: 50px;
+  height: 60px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #ffffff;
+  background-color: #c2f3fc;
   box-sizing: border-box;
   border-bottom: 1px solid #cfcfcf;
 

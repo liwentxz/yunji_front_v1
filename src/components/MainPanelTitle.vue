@@ -1,6 +1,6 @@
 <template>
   <div class="main-panel-title-box">
-    <book-mark theme="outline" size="24" fill="#333" />
+    <iconpark-icon name="bookmark" size="24"></iconpark-icon>
     <div class="main-panel-title-text">用户信息</div>
   </div>
 </template>

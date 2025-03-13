@@ -10,8 +10,12 @@
     </el-menu>
     <div class="tag-left-box">
       <div class="collapse-btn" @click="collapseSidebar()">
-        <i v-if="isCollapse" class="icon-font el-icon-s-unfold"></i>
-        <i v-else class="icon-font el-icon-s-fold"></i>
+        <iconpark-icon
+          v-if="isCollapse"
+          name="menufoldone"
+          size="26"
+        ></iconpark-icon>
+        <iconpark-icon v-else name="menuunfoldone" size="26"></iconpark-icon>
       </div>
     </div>
   </div>
@@ -58,7 +62,7 @@ export default {
 .sidebarContainer {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 60px);
   background-color: #ffffff;
   padding: 0 5px;
 }
@@ -74,10 +78,5 @@ export default {
   font-size: 26px;
   color: #5a5a5a;
   text-align: center;
-
-  .icon-font {
-    font-size: 28px;
-    cursor: pointer;
-  }
 }
 </style>

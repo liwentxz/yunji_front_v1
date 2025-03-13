@@ -50,7 +50,7 @@
               >
                 <el-button size="small">
                   选择
-                  <i class="el-icon-upload el-icon--right"></i>
+                  <iconpark-icon name="upload" size="12"></iconpark-icon>
                 </el-button>
               </el-upload>
             </el-col>

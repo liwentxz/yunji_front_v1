@@ -7,7 +7,10 @@
     >
       <div class="exhibition-box-left"></div>
       <div class="exhibition-box-right">
-        <div class="exhibition-box-right-header">{{ menu.menuName }}</div>
+        <div class="exhibition-box-right-header">
+          <iconpark-icon :name="menu.icon" size="22"></iconpark-icon>
+          <div class="header-title">{{ menu.menuName }}</div>
+        </div>
         <div class="exhibition-box-right-content">
           <div
             class="content-item"
@@ -15,7 +18,7 @@
             :key="item.path"
             @click="menuItemSelected(item)"
           >
-            <img class="item-img" :src="url"></img>
+            <img class="item-img" :src="item.icon" />
             <div class="item-label">{{ item.menuName }}</div>
           </div>
         </div>
@@ -31,7 +34,6 @@ export default {
   data() {
     return {
       activeMenu: {},
-      url: "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
     };
   },
   computed: {
@@ -60,14 +62,17 @@ export default {
 <style lang="scss" scoped>
 .exhibition-box {
   width: 100%;
-  height: 200px;
+  height: 180px;
   display: flex;
   flex-direction: row;
+  margin-bottom: 16px;
 
   .exhibition-box-left {
-    width: 220px;
+    width: 200px;
     height: 100%;
-    background-color: aqua;
+    border-radius: 5%;
+    background-color: #fff;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
   }
 
   .exhibition-box-right {
@@ -75,33 +80,53 @@ export default {
     height: 100%;
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
+    margin-left: 16px;
+    background-color: #fff;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
 
     .exhibition-box-right-header {
-        height: 50px;
-      font-size: 18px;
+      height: 40px;
       display: flex;
-        flex-direction: row;
-        align-items: center;
+      flex-direction: row;
+      align-items: center;
+      padding: 0 10px;
+      box-sizing: border-box;
+      border-bottom: 1px solid #cecece;
+
+      .header-title {
+        font-size: 16px;
+      }
     }
 
     .exhibition-box-right-content {
       display: flex;
       flex-direction: row;
-      cursor: pointer;
+      margin-top: 5px;
 
       .content-item {
-        height: 80px;
+        height: 100%;
+        margin: 0 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        cursor: pointer;
+        border-radius: 10px;
+
+        &:hover {
+          background-color: $active_background;
+        }
 
         .item-img {
-          width: 60px;
-          height: 60px;
+          width: 100px;
+          height: 100px;
           border-radius: 10px;
         }
 
         .item-label {
+          height: 20px;
+          line-height: 20px;
+          margin: 5px 0;
           font-size: 14px;
         }
       }
