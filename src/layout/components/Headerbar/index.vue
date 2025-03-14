@@ -61,7 +61,6 @@ export default {
   flex-direction: row;
   align-items: center;
   background-color: #c2f3fc;
-  box-sizing: border-box;
   border-bottom: 1px solid #cfcfcf;
 
   .lesseeInfoBox {

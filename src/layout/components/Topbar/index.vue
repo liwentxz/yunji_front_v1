@@ -47,6 +47,7 @@ export default {
   padding: 0 5px;
 }
 .topbar-item-box {
+  white-space: nowrap;
   margin: 0 6px;
   font-size: 16px;
   color: $text_color;

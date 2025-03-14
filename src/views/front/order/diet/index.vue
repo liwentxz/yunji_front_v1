@@ -8,12 +8,19 @@
         <CardPanel
           v-for="item in commodityList"
           :key="item.id"
-          style="width: 200px"
+          class="purchase-card"
         >
           <template v-slot:header>
             <div class="card-header-box">
               <div class="card-header-text">
                 {{ item.title }}
+              </div>
+              <div class="card-header-icon">
+                <iconpark-icon
+                  name="shopping"
+                  size="20"
+                  color="#828282"
+                ></iconpark-icon>
               </div>
             </div>
           </template>
@@ -24,9 +31,17 @@
             <div class="purchase-info-box">
               <div class="price-box">￥{{ item.price + "/" + item.unit }}</div>
               <div class="amount-box">
-                <iconpark-icon name="reduceone" size="18"></iconpark-icon>
+                <iconpark-icon
+                  name="reduceone"
+                  size="18"
+                  color="#828282"
+                ></iconpark-icon>
                 <input style="width: 20px" size="mini" v-model="item.amount" />
-                <iconpark-icon name="addone" size="18"></iconpark-icon>
+                <iconpark-icon
+                  name="addone"
+                  size="18"
+                  color="#828282"
+                ></iconpark-icon>
               </div>
             </div>
           </template>
@@ -48,6 +63,79 @@ export default {
       commodityList: [
         {
           id: 1,
+          title: "螺丝椒",
+          img: require("@/assets/images/order/luosijiao.png"),
+          price: 8,
+          unit: "kg",
+          amount: 0,
+        },
+        {
+          id: 2,
+          title: "螺丝椒",
+          img: require("@/assets/images/order/luosijiao.png"),
+          price: 8,
+          unit: "kg",
+          amount: 0,
+        },
+        {
+          id: 3,
+          title: "螺丝椒",
+          img: require("@/assets/images/order/luosijiao.png"),
+          price: 8,
+          unit: "kg",
+          amount: 0,
+        },
+        {
+          id: 4,
+          title: "螺丝椒",
+          img: require("@/assets/images/order/luosijiao.png"),
+          price: 8,
+          unit: "kg",
+          amount: 0,
+        },
+        {
+          id: 5,
+          title: "螺丝椒",
+          img: require("@/assets/images/order/luosijiao.png"),
+          price: 8,
+          unit: "kg",
+          amount: 0,
+        },
+        {
+          id: 6,
+          title: "螺丝椒",
+          img: require("@/assets/images/order/luosijiao.png"),
+          price: 8,
+          unit: "kg",
+          amount: 0,
+        },
+        {
+          id: 7,
+          title: "螺丝椒",
+          img: require("@/assets/images/order/luosijiao.png"),
+          price: 8,
+          unit: "kg",
+          amount: 0,
+        },
+        {
+          id: 8,
+          title: "螺丝椒",
+          img: require("@/assets/images/order/luosijiao.png"),
+          price: 8,
+          unit: "kg",
+          amount: 0,
+        },
+
+        {
+          id: 9,
+          title: "螺丝椒",
+          img: require("@/assets/images/order/luosijiao.png"),
+          price: 8,
+          unit: "kg",
+          amount: 0,
+        },
+        {
+          id: 10,
           title: "螺丝椒",
           img: require("@/assets/images/order/luosijiao.png"),
           price: 8,
@@ -82,11 +170,11 @@ export default {
 
 <style lang="scss" scoped>
 .purchase-part {
-  width: 95%;
+  width: 96%;
   display: flex;
   flex-direction: column;
   margin: auto;
-  border-radius: 5%;
+  border-radius: 16px;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
 
   .purchase-part-header {
@@ -95,14 +183,25 @@ export default {
     display: flex;
     flex-direction: row;
     align-items: center;
+    border-radius: 16px;
     background-color: #fff;
     padding: 0 20px;
   }
 
   .purchase-part-content {
     width: 100%;
-    height: 500px;
+    display: flex;
+    flex-direction: row;
     background-color: #f8f8f8;
+    flex-wrap: wrap;
+
+    .purchase-card {
+      flex: 0 0 calc(12.5% - 12px);
+    }
+
+    iconpark-icon {
+      cursor: pointer;
+    }
   }
 
   .purchase-img-box {
@@ -125,6 +224,7 @@ export default {
     border-top: 1px solid #cecece;
 
     .price-box {
+      font-size: 16px;
       margin-left: 10px;
       color: red;
     }
@@ -133,10 +233,6 @@ export default {
       display: flex;
       flex-direction: row;
       align-items: center;
-
-      iconpark-icon {
-        cursor: pointer;
-      }
     }
   }
 }

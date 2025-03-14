@@ -4,7 +4,6 @@ import App from "./App.vue";
 import router from "./router";
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
-
 import "@/assets/styles/index.scss";
 import "@/assets/styles/common.css";
 import http from "@/utils/http/index.js";
@@ -14,6 +13,7 @@ import { Splitpanes, Pane } from "splitpanes";
 import "splitpanes/dist/splitpanes.css";
 import "./routeGuard";
 import { resetForm } from "@/utils/form.js";
+import "@/utils/rem.js"; // ‌:ml-citation{ref="3,5" data="citationList"}
 
 Vue.use(ElementUI);
 Vue.component("splitpanes", Splitpanes);

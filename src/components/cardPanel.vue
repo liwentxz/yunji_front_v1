@@ -1,5 +1,5 @@
 <template>
-  <div class="cardBox">
+  <div class="card-box">
     <el-card>
       <slot name="header"></slot>
       <div class="cardContent">
@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.cardBox :deep(.el-card__body) {
+.card-box :deep(.el-card__body) {
   padding: 0;
 }
 </style>

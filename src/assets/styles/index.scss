@@ -7,6 +7,10 @@ body,
   background-color: #f8f8f8;
 }
 
+div {
+  box-sizing: border-box;
+}
+
 /* 整个滚动条 */
 ::-webkit-scrollbar {
   width: 8px; /* 垂直滚动条的宽度，这里设为12px作为示例 */

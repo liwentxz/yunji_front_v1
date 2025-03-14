@@ -107,7 +107,6 @@ export default {
   align-items: center;
   background-color: #fff;
   padding: 0 8px;
-  box-sizing: border-box;
   border-bottom: 2px solid #e6e6e6;
 
   .tag-item {

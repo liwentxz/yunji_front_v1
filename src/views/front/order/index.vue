@@ -91,7 +91,6 @@ export default {
       flex-direction: row;
       align-items: center;
       padding: 0 10px;
-      box-sizing: border-box;
       border-bottom: 1px solid #cecece;
 
       .header-title {
