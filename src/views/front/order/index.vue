@@ -8,7 +8,11 @@
       <div class="exhibition-box-left"></div>
       <div class="exhibition-box-right">
         <div class="exhibition-box-right-header">
-          <iconpark-icon :name="menu.icon" size="22"></iconpark-icon>
+          <iconpark-icon
+            :name="menu.icon"
+            size="22"
+            color="#409eff"
+          ></iconpark-icon>
           <div class="header-title">{{ menu.menuName }}</div>
         </div>
         <div class="exhibition-box-right-content">
@@ -19,6 +23,14 @@
             @click="menuItemSelected(item)"
           >
             <img class="item-img" :src="item.icon" />
+            <div
+              style="
+                width: 60px;
+                height: 1px;
+                background-color: #52e1fa;
+                margin: auto;
+              "
+            ></div>
             <div class="item-label">{{ item.menuName }}</div>
           </div>
         </div>
@@ -62,7 +74,7 @@ export default {
 <style lang="scss" scoped>
 .exhibition-box {
   width: 100%;
-  height: 180px;
+  height: 200px;
   display: flex;
   flex-direction: row;
   margin-bottom: 16px;
@@ -101,7 +113,7 @@ export default {
     .exhibition-box-right-content {
       display: flex;
       flex-direction: row;
-      margin-top: 5px;
+      margin-top: 15px;
 
       .content-item {
         height: 100%;
@@ -110,7 +122,9 @@ export default {
         flex-direction: column;
         align-items: center;
         cursor: pointer;
-        border-radius: 10px;
+        border-radius: 20px;
+        border: 1px solid #52e1fa;
+        box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.102);
 
         &:hover {
           background-color: $active_background;
@@ -119,7 +133,7 @@ export default {
         .item-img {
           width: 100px;
           height: 100px;
-          border-radius: 10px;
+          border-radius: 20px;
         }
 
         .item-label {

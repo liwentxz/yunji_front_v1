@@ -17,7 +17,7 @@
 }
 
 iconpark-icon {
-  margin: 0 10px;
+  margin: 0 8px;
 }
 
 .card-header-text {
@@ -30,6 +30,9 @@ iconpark-icon {
 
 .card-header-icon {
   margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .cardContent {

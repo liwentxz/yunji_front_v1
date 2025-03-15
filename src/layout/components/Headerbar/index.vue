@@ -60,8 +60,7 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #c2f3fc;
-  border-bottom: 1px solid #cfcfcf;
+  border-bottom: 2px solid #409eff;
 
   .lesseeInfoBox {
     max-width: 500px;

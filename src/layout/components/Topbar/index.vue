@@ -4,7 +4,10 @@
       class="topbar-item-box"
       v-for="menu in menuList"
       :key="menu.path"
-      :style="{ color: activeMenu == menu.path ? '#409eff' : '' }"
+      :style="{
+        color: activeMenu == menu.path ? '#ffffff' : '',
+        backgroundColor: activeMenu == menu.path ? '#409eff' : '',
+      }"
       @click="menuItemSelected(menu)"
     >
       {{ menu.menuName }}
@@ -47,10 +50,13 @@ export default {
   padding: 0 5px;
 }
 .topbar-item-box {
+  height: 50px;
+  line-height: 50px;
   white-space: nowrap;
-  margin: 0 6px;
+  padding: 0 10px;
   font-size: 16px;
   color: $text_color;
+  border-radius: 5px;
   cursor: pointer;
 
   &:hover {

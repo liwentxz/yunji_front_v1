@@ -58,7 +58,7 @@ export default {
   padding: 20px;
 }
 ::v-deep .el-dialog__header {
-  height: 30px;
+  height: 50px;
   line-height: 30px;
   font-size: 20px;
   border-bottom: 1px solid #cdcdcd;

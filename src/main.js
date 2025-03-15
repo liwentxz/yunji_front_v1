@@ -13,7 +13,7 @@ import { Splitpanes, Pane } from "splitpanes";
 import "splitpanes/dist/splitpanes.css";
 import "./routeGuard";
 import { resetForm } from "@/utils/form.js";
-import "@/utils/rem.js"; // ‌:ml-citation{ref="3,5" data="citationList"}
+// import "@/utils/rem.js";
 
 Vue.use(ElementUI);
 Vue.component("splitpanes", Splitpanes);

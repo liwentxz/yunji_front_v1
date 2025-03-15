@@ -43,6 +43,18 @@ export const constantRoutes = [
         meta: { title: "商品订购" },
       },
       {
+        path: "front/service",
+        name: "Service",
+        component: () => import("@/views/front/service/index"),
+        meta: { title: "旧物置换" },
+      },
+      {
+        path: "front/recycle",
+        name: "Recycle",
+        component: () => import("@/views/front/recycle/index"),
+        meta: { title: "旧物置换" },
+      },
+      {
         path: "front/order/diet/vegetable",
         name: "Vegetable",
         component: () => import("@/views/front/order/diet/index"),

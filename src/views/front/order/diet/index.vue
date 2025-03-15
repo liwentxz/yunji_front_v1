@@ -17,9 +17,19 @@
               </div>
               <div class="card-header-icon">
                 <iconpark-icon
+                  name="viewlist"
+                  size="20"
+                  @click="openComDetail()"
+                ></iconpark-icon>
+                <iconpark-icon
                   name="shopping"
                   size="20"
-                  color="#828282"
+                  @click="open()"
+                ></iconpark-icon>
+                <iconpark-icon
+                  name="buy"
+                  size="20"
+                  @click="openBuy(item)"
                 ></iconpark-icon>
               </div>
             </div>
@@ -31,118 +41,33 @@
             <div class="purchase-info-box">
               <div class="price-box">￥{{ item.price + "/" + item.unit }}</div>
               <div class="amount-box">
-                <iconpark-icon
-                  name="reduceone"
-                  size="18"
-                  color="#828282"
-                ></iconpark-icon>
+                <iconpark-icon name="reduceone" size="18"></iconpark-icon>
                 <input style="width: 20px" size="mini" v-model="item.amount" />
-                <iconpark-icon
-                  name="addone"
-                  size="18"
-                  color="#828282"
-                ></iconpark-icon>
+                <iconpark-icon name="addone" size="18"></iconpark-icon>
               </div>
             </div>
           </template>
         </CardPanel>
       </div>
     </div>
+    <ComDetail ref="comDetailRef" :dialogInfo="curDialogInfo"></ComDetail>
   </div>
 </template>
 
 <script>
 import CardPanel from "@/components/CardPanel.vue";
+import ComDetail from "../components/ComDetail.vue";
+import vegetableList from "@/api/vegetableList.js";
 export default {
   name: "",
-  components: { CardPanel },
+  components: { CardPanel, ComDetail },
   data() {
     return {
+      curDialogInfo: {},
+      curOrderDetail: {},
       activeMenu: {},
       input: 0,
-      commodityList: [
-        {
-          id: 1,
-          title: "螺丝椒",
-          img: require("@/assets/images/order/luosijiao.png"),
-          price: 8,
-          unit: "kg",
-          amount: 0,
-        },
-        {
-          id: 2,
-          title: "螺丝椒",
-          img: require("@/assets/images/order/luosijiao.png"),
-          price: 8,
-          unit: "kg",
-          amount: 0,
-        },
-        {
-          id: 3,
-          title: "螺丝椒",
-          img: require("@/assets/images/order/luosijiao.png"),
-          price: 8,
-          unit: "kg",
-          amount: 0,
-        },
-        {
-          id: 4,
-          title: "螺丝椒",
-          img: require("@/assets/images/order/luosijiao.png"),
-          price: 8,
-          unit: "kg",
-          amount: 0,
-        },
-        {
-          id: 5,
-          title: "螺丝椒",
-          img: require("@/assets/images/order/luosijiao.png"),
-          price: 8,
-          unit: "kg",
-          amount: 0,
-        },
-        {
-          id: 6,
-          title: "螺丝椒",
-          img: require("@/assets/images/order/luosijiao.png"),
-          price: 8,
-          unit: "kg",
-          amount: 0,
-        },
-        {
-          id: 7,
-          title: "螺丝椒",
-          img: require("@/assets/images/order/luosijiao.png"),
-          price: 8,
-          unit: "kg",
-          amount: 0,
-        },
-        {
-          id: 8,
-          title: "螺丝椒",
-          img: require("@/assets/images/order/luosijiao.png"),
-          price: 8,
-          unit: "kg",
-          amount: 0,
-        },
-
-        {
-          id: 9,
-          title: "螺丝椒",
-          img: require("@/assets/images/order/luosijiao.png"),
-          price: 8,
-          unit: "kg",
-          amount: 0,
-        },
-        {
-          id: 10,
-          title: "螺丝椒",
-          img: require("@/assets/images/order/luosijiao.png"),
-          price: 8,
-          unit: "kg",
-          amount: 0,
-        },
-      ],
+      commodityList: vegetableList,
     };
   },
   computed: {
@@ -163,6 +88,28 @@ export default {
   methods: {
     menuItemSelected(menu) {
       this.$router.push(menu.path);
+    },
+    open() {
+      this.$message({
+        message: "已加入购物车",
+        type: "success",
+        center: true,
+      });
+    },
+    openBuy(val) {
+      this.curDialogInfo = {
+        title: "购买",
+        type: "buy",
+      };
+      this.curOrderDetail = val;
+      this.$refs.comDetailRef.dialogVisible = true;
+    },
+    openComDetail() {
+      this.curDialogInfo = {
+        title: "商品详情",
+        type: "commodity",
+      };
+      this.$refs.comDetailRef.dialogVisible = true;
     },
   },
 };
@@ -200,7 +147,11 @@ export default {
     }
 
     iconpark-icon {
+      color: #828282;
       cursor: pointer;
+      &:hover {
+        color: $active_text;
+      }
     }
   }
 
